@@ -2,7 +2,7 @@
 name = "fastapi-todo-api"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Felipe Sanchez <f.sanxz@gmail.com>"]
 readme = "README.md"
 packages = [{include = "fastapi_todo_api"}]
 
@@ -12,7 +12,9 @@ fastapi = "^0.95.2"
 uvicorn = "^0.22.0"
 sqlalchemy = "^2.0.15"
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "fastapi_todo_api.app:start"
