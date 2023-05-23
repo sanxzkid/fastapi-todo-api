@@ -12,10 +12,6 @@ class Todo(BaseModel):
 
 todos: list[Todo] = []
 
-@app.get("/")
-async def root():
-    return {"message", "Hello World"}
-
 @app.post("/todos")
 async def create(todo: Todo):
     todos.append(todo)
@@ -31,7 +27,7 @@ async def get(id: int):
         if item.id == id:
             return item
 
-@app.update("/todos/{id}")
+@app.put("/todos/{id}")
 async def update(id: int, todo: Todo):
     for item in todos:
         if item.id == id:
