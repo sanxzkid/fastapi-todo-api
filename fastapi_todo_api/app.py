@@ -29,10 +29,10 @@ async def get(id: int):
 
 @app.put("/todos/{id}")
 async def update(id: int, todo: Todo):
-    for item in todos:
+    for idx, item in enumerate(todos):
         if item.id == id:
-            item = todo
-            return item
+            todos[idx] = todo
+            return todos[idx]
 
 def start():
     uvicorn.run("fastapi_todo_api.app:app", reload=True)
